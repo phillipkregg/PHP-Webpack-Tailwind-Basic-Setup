@@ -1,0 +1,27 @@
+{
+    "name": "learn_php_20_mins",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack --config webpack.config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@prettier/plugin-php": "^0.16.2",
+        "prettier": "^2.2.1"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.2.5",
+        "css-loader": "^5.2.2",
+        "mini-css-extract-plugin": "^1.5.0",
+        "postcss": "^8.2.10",
+        "postcss-loader": "^5.2.0",
+        "style-loader": "^2.0.0",
+        "tailwindcss": "^2.1.1",
+        "tailwindcss-inset": "^1.0.0",
+        "webpack": "^5.33.2",
+        "webpack-cli": "^4.6.0"
+    }
+}
