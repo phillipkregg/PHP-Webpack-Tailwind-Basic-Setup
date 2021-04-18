@@ -1,5 +1,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const glob = require('glob')
 
 module.exports = {
     mode: 'development',
@@ -8,8 +10,19 @@ module.exports = {
         filename: 'main.bundle.js',
         path: path.resolve(__dirname, 'assets/dist'),
     },
-    watch: true,
-    plugins: [new MiniCssExtractPlugin()],
+    plugins: [
+        new MiniCssExtractPlugin(),
+        new ImageminPlugin({
+            externalImages: {
+                context: '.',
+                sources: glob.sync(
+                    'assets/src/images/**/*.{png, jpg, jpeg, gif, svg}'
+                ),
+                destination: 'assets/dist/images',
+                fileName: '[name].[ext]',
+            },
+        }),
+    ],
     module: {
         rules: [
             {
